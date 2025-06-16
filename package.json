@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "name": "js_proj_01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshvibhoresharma/Internship-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshvibhoresharma/Internship-Project/issues"
+  },
+  "homepage": "https://github.com/harshvibhoresharma/Internship-Project#readme",
+  "description": ""
 }
