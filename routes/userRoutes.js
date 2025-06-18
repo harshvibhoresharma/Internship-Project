@@ -1,6 +1,5 @@
 const express=require('express');
 const router = express.Router();
-const User = require('../models/user.js')
 const handlers=require('./handlers');
 
 router.route('/:id')
