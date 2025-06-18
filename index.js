@@ -12,7 +12,7 @@ app.use(logFiles('logs.txt'));
 
 connectedDB()
   .then(() => {
-    console.log('✅ MongoDB connected');
+    console.log('MongoDB connected');
 
     app.use('/user', userRoutes);
 
