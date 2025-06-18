@@ -17,9 +17,9 @@ connectedDB()
     app.use('/user', userRoutes);
 
     app.listen(PORT, () => {
-      console.log(`🚀 Server running at http://localhost:${PORT}`);
+      console.log(` Server running at http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
-    console.error('❌ MongoDB connection failed:', err);
+    console.error(' MongoDB connection failed:', err);
   });
