@@ -1,17 +1,15 @@
-const express = require('express');
+const express=require('express');
 const router = express.Router();
-const User = require('../models/user');
+const User = require('../models/user.js')
+const handlers=require('./handlers');
 
-router
-.post('/',async (req,res) => {
-    try{
-        const newUser = new User(req.body);
-        const savedUser=await newUser.save();
-        res.status(201).json(savedUser);
+router.route('/:id')
+.get(handlers.handleGetUserById)
+.delete(handlers.handleDeleteUserById)
+.patch(handlers.handleUpdateUserById);
 
-    }catch(err){
-        res.status(400).json({error : err });
-    }
+router.route('/')
+.get(handlers.handleGetAllUsers)
+.post(handlers.handleCreateNewUser);
 
-});
-module.exports=router;
+module.exports = router;
