@@ -10,7 +10,7 @@ async function handleGetAllUsers(req,res) {
 }
 async function handleGetUserById(req,res) {
     try{
-        const userById=await User.findById(req.params.id);
+        const userById=await User.findById(req.params.id.trim());
         return res.status(200).json(userById);
     }catch(err){
         return res.status(500).json({error : `${err}`});
@@ -20,7 +20,7 @@ async function handleGetUserById(req,res) {
 async function handleUpdateUserById(req, res) {
   try {
     const updatedUser = await User.findByIdAndUpdate(
-      req.params.id,
+      req.params.id.trim(),
       req.body,                  // New data to update
       { new: true, runValidators: true } // Return the updated doc & validate
     );
@@ -36,7 +36,7 @@ async function handleUpdateUserById(req, res) {
 }
 async function handleDeleteUserById(req,res) {
     try{
-        await User.findByIdAndDelete(req.params.id);
+        await User.findByIdAndDelete(req.params.id.trim());
         return res.status(200).json({status : `${req.params.id} deleted successfully`});
 
     }catch(err){
